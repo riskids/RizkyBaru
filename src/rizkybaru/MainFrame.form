@@ -138,9 +138,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Guntur Maulana I\Documents\Icon App\Book.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="DASHBOARD"/>
                 <Property name="iconTextGap" type="int" value="35"/>
               </Properties>
@@ -150,9 +147,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Guntur Maulana I\Documents\Icon App\Home.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="HOME"/>
                 <Property name="iconTextGap" type="int" value="35"/>
               </Properties>
@@ -162,9 +156,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Guntur Maulana I\Documents\Icon App\About.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="ABOUT"/>
                 <Property name="iconTextGap" type="int" value="35"/>
               </Properties>
@@ -174,9 +165,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Guntur Maulana I\Documents\Icon App\Logout.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="LOGOUT"/>
                 <Property name="iconTextGap" type="int" value="35"/>
               </Properties>
@@ -186,9 +174,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Guntur Maulana I\Documents\Icon App\History.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="REPORT"/>
                 <Property name="iconTextGap" type="int" value="35"/>
               </Properties>
