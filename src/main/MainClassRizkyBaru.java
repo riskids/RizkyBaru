@@ -8,7 +8,7 @@ package main;
 import database.RizkyBaruDatabase;
 import entity.Penjualan;
 import error.PenjualanException;
-import service.PelangganDao;
+import service.PenjualanDao;
 import view.MainViewPenjualan;
 import java.sql.SQLException;
 import java.util.List;
@@ -31,9 +31,9 @@ public class MainClassRizkyBaru {
             @Override
             public void run() {
                 try {
-                    MainViewPenjualan Pelanggan = new MainViewPenjualan();
-                    Pelanggan.loadDatabase();
-                    Pelanggan.setVisible(true);
+                    MainViewPenjualan Penjualan = new MainViewPenjualan();
+                    Penjualan.loadDatabase();
+                    Penjualan.setVisible(true);
                     
                 } catch (SQLException ex) {
                 } catch (PenjualanException ex) {

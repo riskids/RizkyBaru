@@ -7,7 +7,7 @@ package database;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import impl.PenjualanDaoImpl;
-import service.PelangganDao;
+import service.PenjualanDao;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class RizkyBaruDatabase {
 
     private static Connection connection;
-    private static PelangganDao PelangganDao;
+    private static PenjualanDao PenjualanDao;
 
     public static Connection getConnection() throws SQLException {
         if (connection == null) {
@@ -31,10 +31,10 @@ public class RizkyBaruDatabase {
         return connection;
     }
 
-    public static PelangganDao getPelangganDao() throws SQLException {
-        if (PelangganDao == null) {
-            PelangganDao = new PenjualanDaoImpl(getConnection());
+    public static PenjualanDao getPenjualanDao() throws SQLException {
+        if (PenjualanDao == null) {
+            PenjualanDao = new PenjualanDaoImpl(getConnection());
         }
-        return PelangganDao;
+        return PenjualanDao;
     }
 }

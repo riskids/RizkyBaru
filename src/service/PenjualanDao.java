@@ -13,16 +13,16 @@ import java.util.List;
  *
  * @author Rizki Adam Kurniawan
  */
-public interface PelangganDao {
+public interface PenjualanDao {
 
     //Untuk melakukan aktifitas CRUD
     // Get By ID dan Get By Email
-    public void insertPelanggan(Penjualan Pelanggan) throws PenjualanException;
+    public void insertPenjualan(Penjualan Penjualan) throws PenjualanException;
 
-    public void updatePelanggan(Penjualan Pelanggan) throws PenjualanException;
+    public void updatePenjualan(Penjualan Penjualan) throws PenjualanException;
 
-    public void deletePelanggan(Integer id) throws PenjualanException;
+    public void deletePenjualan(Integer id) throws PenjualanException;
 
-    // Jika ingin meload semua data Pelanggan
-    public List<Penjualan> selectAllPelanggan() throws PenjualanException;
+    // Jika ingin meload semua data Penjualan
+    public List<Penjualan> selectAllPenjualan() throws PenjualanException;
 }

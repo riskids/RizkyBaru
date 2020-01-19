@@ -18,7 +18,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import model.PenjualanModel;
 import model.TabelPenjualanModel;
-import service.PelangganDao;
+import service.PenjualanDao;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
@@ -67,7 +67,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
        
     }
 
-    public JTable getTablePelanggan() {
+    public JTable getTablePenjualan() {
         return tablePenjualan;
     }
 
@@ -468,7 +468,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
-        controller.deletePelanggan(this);
+        controller.deletePenjualan(this);
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void Label_tampiUntungKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntungKeyPressed
@@ -528,12 +528,12 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
         // TODO add your handling code here:
-        controller.insertPelanggan(this);
+        controller.insertPenjualan(this);
     }//GEN-LAST:event_btnTambahActionPerformed
 
     private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
         // TODO add your handling code here:
-        controller.updatePelanggan(this);
+        controller.updatePenjualan(this);
     }//GEN-LAST:event_btnUbahActionPerformed
 
     private void Label_tampiUntung1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung1MouseClicked
@@ -600,15 +600,15 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     }
 
     @Override
-    public void onInsert(Penjualan Pelanggan) {
+    public void onInsert(Penjualan Penjualan) {
 
-        tabelModel.add(Pelanggan);
+        tabelModel.add(Penjualan);
     }
 
     @Override
-    public void onUpdate(Penjualan Pelanggan) {
+    public void onUpdate(Penjualan Penjualan) {
         int index = tablePenjualan.getSelectedRow();
-        tabelModel.set(index, Pelanggan);
+        tabelModel.set(index, Penjualan);
 
     }
 
@@ -633,8 +633,8 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     }
 
     public void loadDatabase() throws SQLException, PenjualanException {
-        PelangganDao dao = RizkyBaruDatabase.getPelangganDao();
-        tabelModel.setList(dao.selectAllPelanggan());
+        PenjualanDao dao = RizkyBaruDatabase.getPenjualanDao();
+        tabelModel.setList(dao.selectAllPenjualan());
     }
 
     private String format(JXDatePicker tanggal) {
@@ -649,7 +649,7 @@ private Connection con;
     private void tampilUntung() {
         
         this.con=con;
-        String selectUntung = "SELECT SUM(Jumlah) FROM `Pelanggan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
+        String selectUntung = "SELECT SUM(Jumlah) FROM `Penjualan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
         Statement statement = null;
         String untung;
         try {

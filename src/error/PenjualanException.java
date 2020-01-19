@@ -12,14 +12,14 @@ package error;
 public class PenjualanException extends Exception {
 
     /**
-     * Creates a new instance of <code>PelangganException</code> without detail
+     * Creates a new instance of <code>PenjualanException</code> without detail
      * message.
      */
     public PenjualanException() {
     }
 
     /**
-     * Constructs an instance of <code>PelangganException</code> with the
+     * Constructs an instance of <code>PenjualanException</code> with the
      * specified detail message.
      *
      * @param msg the detail message.

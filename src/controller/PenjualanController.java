@@ -21,12 +21,12 @@ public class PenjualanController {
         this.model = model;
     }
 
-    public void resetPelanggan(PenjualanVIew view) {
-        model.resetPelanggan();
+    public void resetPenjualan(PenjualanVIew view) {
+        model.resetPenjualan();
 
     }
 
-    public void insertPelanggan(PenjualanVIew view) {
+    public void insertPenjualan(PenjualanVIew view) {
         String tgl = view.getTxtTgl().getText();
         Integer galon_terjual = Integer.parseInt(view.getTxtGalon().getText());
         Integer jumlah = Integer.parseInt(view.getTxtJumlah().getText());
@@ -40,9 +40,9 @@ public class PenjualanController {
             model.setGalon(galon_terjual);
             model.setJumlah(jumlah);
             try {
-                model.insertPelanggan();
+                model.insertPenjualan();
                 JOptionPane.showMessageDialog(view, "Berhasil Input Data");
-                model.resetPelanggan();
+                model.resetPenjualan();
             } catch (Throwable throwable) {
                 JOptionPane.showMessageDialog(view, new Object[]{
                     "Terjadi error di database dengan pesan ", throwable.getMessage()
@@ -51,10 +51,10 @@ public class PenjualanController {
         }
     }
 
-    public void updatePelanggan(PenjualanVIew view) {
+    public void updatePenjualan(PenjualanVIew view) {
 
         //jika tidak ada yang diseleksi kasih peringatan
-        if (view.getTablePelanggan().getSelectedRowCount() == 0) {
+        if (view.getTablePenjualan().getSelectedRowCount() == 0) {
             JOptionPane.showMessageDialog(view, "Silahkan Seleksi baris data yang akan diubah");
             return;
         }
@@ -72,9 +72,9 @@ public class PenjualanController {
             model.setGalon(galon_terjual);
             model.setJumlah(jumlah);
             try {
-                model.updatePelanggan();
+                model.updatePenjualan();
                 JOptionPane.showMessageDialog(view, "Berhasil Update Data");
-                model.resetPelanggan();
+                model.resetPenjualan();
             } catch (Throwable throwable) {
                 JOptionPane.showMessageDialog(view, new Object[]{
                     "Terjadi error di database dengan pesan ", throwable.getMessage()
@@ -83,10 +83,10 @@ public class PenjualanController {
         }
     }
 
-    public void deletePelanggan(PenjualanVIew view) {
+    public void deletePenjualan(PenjualanVIew view) {
 
         //jika tidak ada yang diseleksi kasih peringatan
-        if (view.getTablePelanggan().getSelectedRowCount() == 0) {
+        if (view.getTablePenjualan().getSelectedRowCount() == 0) {
             JOptionPane.showMessageDialog(view, "Silahkan Seleksi baris data yang akan dihapus");
             return;
         }
@@ -98,9 +98,9 @@ public class PenjualanController {
             model.setId(id);
 
             try {
-                model.deletePelanggan();
-                JOptionPane.showMessageDialog(view, "Data Pelanggan Berhasil Di Hapus");
-                model.resetPelanggan();
+                model.deletePenjualan();
+                JOptionPane.showMessageDialog(view, "Data Penjualan Berhasil Di Hapus");
+                model.resetPenjualan();
             } catch (Throwable throwable) {
                 JOptionPane.showMessageDialog(view, new Object[]{
                     "Terjadi error di database dengan pesan ", throwable.getMessage()

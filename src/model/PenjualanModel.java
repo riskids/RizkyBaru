@@ -9,7 +9,7 @@ import database.RizkyBaruDatabase;
 import entity.Penjualan;
 import error.PenjualanException;
 import event.PenjualanListener;
-import service.PelangganDao;
+import service.PenjualanDao;
 import view.PenjualanVIew;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -76,15 +76,15 @@ public class PenjualanModel {
         }
     }
 
-    protected void fireOnInsert(Penjualan Pelanggan) {
+    protected void fireOnInsert(Penjualan Penjualan) {
         if (listener != null) {
-            listener.onInsert(Pelanggan);
+            listener.onInsert(Penjualan);
         }
     }
 
-    protected void fireOnUpdate(Penjualan Pelanggan) {
+    protected void fireOnUpdate(Penjualan Penjualan) {
         if (listener != null) {
-            listener.onUpdate(Pelanggan);
+            listener.onUpdate(Penjualan);
         }
     }
 
@@ -95,40 +95,40 @@ public class PenjualanModel {
         }
     }
 
-    public void insertPelanggan() throws SQLException, PenjualanException {
-        PelangganDao dao = RizkyBaruDatabase.getPelangganDao();
+    public void insertPenjualan() throws SQLException, PenjualanException {
+        PenjualanDao dao = RizkyBaruDatabase.getPenjualanDao();
 
-        Penjualan Pelanggan = new Penjualan();
-        Pelanggan.setTgl(tgl);
-        Pelanggan.setGalon(galon_terjual);
-        Pelanggan.setJumlah(jumlah);
+        Penjualan Penjualan = new Penjualan();
+        Penjualan.setTgl(tgl);
+        Penjualan.setGalon(galon_terjual);
+        Penjualan.setJumlah(jumlah);
 
-        dao.insertPelanggan(Pelanggan);
-        fireOnInsert(Pelanggan);
+        dao.insertPenjualan(Penjualan);
+        fireOnInsert(Penjualan);
 
     }
 
-    public void updatePelanggan() throws SQLException, PenjualanException {
-        PelangganDao dao = RizkyBaruDatabase.getPelangganDao();
+    public void updatePenjualan() throws SQLException, PenjualanException {
+        PenjualanDao dao = RizkyBaruDatabase.getPenjualanDao();
 
-        Penjualan Pelanggan = new Penjualan();
-        Pelanggan.setTgl(tgl);
-        Pelanggan.setGalon(galon_terjual);
-        Pelanggan.setJumlah(jumlah);
-        Pelanggan.setId(id);
+        Penjualan Penjualan = new Penjualan();
+        Penjualan.setTgl(tgl);
+        Penjualan.setGalon(galon_terjual);
+        Penjualan.setJumlah(jumlah);
+        Penjualan.setId(id);
 
-        dao.updatePelanggan(Pelanggan);
-        fireOnUpdate(Pelanggan);
+        dao.updatePenjualan(Penjualan);
+        fireOnUpdate(Penjualan);
     }
 
-    public void deletePelanggan() throws SQLException, PenjualanException {
+    public void deletePenjualan() throws SQLException, PenjualanException {
         
-        PelangganDao dao = RizkyBaruDatabase.getPelangganDao();
-        dao.deletePelanggan(id);
+        PenjualanDao dao = RizkyBaruDatabase.getPenjualanDao();
+        dao.deletePenjualan(id);
         fireOnDelete();
     }
     
-    public void resetPelanggan(){
+    public void resetPenjualan(){
         setId(0);
         setTgl("");
         setGalon(0);
