@@ -25,35 +25,35 @@ import java.util.logging.Logger;
 public class PenjualanDaoImpl implements PelangganDao {
 
     private Connection connection;
-    private final String insertPelanggan = "INSERT INTO PELANGGAN"
+    private final String insertPelanggan = "INSERT INTO Pelanggan"
             + "(Tgl, Galon_Terjual, Jumlah) VALUES"
             + "(?,?,?)";
 
-    private final String updatePelanggan = "UPDATE PELANGGAN SET Tgl=?,Galon_Terjual=?,Jumlah=?,WHERE ID=?";
+    private final String updatePelanggan = "UPDATE Pelanggan SET Tgl=?,Galon_Terjual=?,Jumlah=?,WHERE ID=?";
 
-    private final String deletePelanggan = "DELETE FROM PELANGGAN WHERE ID=?";
+    private final String deletePelanggan = "DELETE FROM Pelanggan WHERE ID=?";
 
-    private final String selectAll = "SELECT * FROM PELANGGAN";
+    private final String selectAll = "SELECT * FROM Pelanggan";
 
     public PenjualanDaoImpl(Connection connection) {
         this.connection = connection;
     }
 
     @Override
-    public void insertPelanggan(Penjualan pelanggan) throws PenjualanException {
+    public void insertPelanggan(Penjualan Pelanggan) throws PenjualanException {
 
         PreparedStatement statement = null;
         try {
             connection.setAutoCommit(false);
             statement = connection.prepareStatement(insertPelanggan, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, pelanggan.getTgl());
-            statement.setInt(2, pelanggan.getGalon());
-            statement.setInt(3, pelanggan.getJumlah());
+            statement.setString(1, Pelanggan.getTgl());
+            statement.setInt(2, Pelanggan.getGalon());
+            statement.setInt(3, Pelanggan.getJumlah());
             statement.executeUpdate();
             
             ResultSet result  = statement.getGeneratedKeys();
             if (result.next()) {
-                pelanggan.setId(result.getInt(1));
+                Pelanggan.setId(result.getInt(1));
             }
             
             connection.commit();
@@ -78,17 +78,17 @@ public class PenjualanDaoImpl implements PelangganDao {
     }
 
     @Override
-    public void updatePelanggan(Penjualan pelanggan) throws PenjualanException {
+    public void updatePelanggan(Penjualan Pelanggan) throws PenjualanException {
 
         PreparedStatement statement = null;
 
         try {
             connection.setAutoCommit(false);
             statement = connection.prepareStatement(updatePelanggan);
-            statement.setString(1, pelanggan.getTgl());
-            statement.setInt(2, pelanggan.getGalon());
-            statement.setInt(3, pelanggan.getJumlah());
-            statement.setInt(5, pelanggan.getId());
+            statement.setString(1, Pelanggan.getTgl());
+            statement.setInt(2, Pelanggan.getGalon());
+            statement.setInt(3, Pelanggan.getJumlah());
+            statement.setInt(5, Pelanggan.getId());
             statement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
@@ -151,13 +151,13 @@ public class PenjualanDaoImpl implements PelangganDao {
 
             ResultSet result = statement.executeQuery(selectAll);
             while (result.next()) {
-                Penjualan pelanggan = new Penjualan();
-                pelanggan.setId(result.getInt("ID"));
-                pelanggan.setTgl(result.getString("Tgl"));
-                pelanggan.setGalon(result.getInt("Galon_Terjual"));
-                pelanggan.setJumlah(result.getInt("Jumlah"));
+                Penjualan Pelanggan = new Penjualan();
+                Pelanggan.setId(result.getInt("ID"));
+                Pelanggan.setTgl(result.getString("Tgl"));
+                Pelanggan.setGalon(result.getInt("Galon_Terjual"));
+                Pelanggan.setJumlah(result.getInt("Jumlah"));
                     
-                list2.add(pelanggan);
+                list2.add(Pelanggan);
             }
             connection.commit();
             return list2;

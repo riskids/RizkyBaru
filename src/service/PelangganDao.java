@@ -17,12 +17,12 @@ public interface PelangganDao {
 
     //Untuk melakukan aktifitas CRUD
     // Get By ID dan Get By Email
-    public void insertPelanggan(Penjualan pelanggan) throws PenjualanException;
+    public void insertPelanggan(Penjualan Pelanggan) throws PenjualanException;
 
-    public void updatePelanggan(Penjualan pelanggan) throws PenjualanException;
+    public void updatePelanggan(Penjualan Pelanggan) throws PenjualanException;
 
     public void deletePelanggan(Integer id) throws PenjualanException;
 
-    // Jika ingin meload semua data pelanggan
+    // Jika ingin meload semua data Pelanggan
     public List<Penjualan> selectAllPelanggan() throws PenjualanException;
 }

@@ -31,9 +31,9 @@ public class MainClassRizkyBaru {
             @Override
             public void run() {
                 try {
-                    MainViewPenjualan pelanggan = new MainViewPenjualan();
-                    pelanggan.loadDatabase();
-                    pelanggan.setVisible(true);
+                    MainViewPenjualan Pelanggan = new MainViewPenjualan();
+                    Pelanggan.loadDatabase();
+                    Pelanggan.setVisible(true);
                     
                 } catch (SQLException ex) {
                 } catch (PenjualanException ex) {

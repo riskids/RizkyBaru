@@ -14,12 +14,12 @@ import model.PenjualanModel;
  */
 public interface PenjualanListener {
     
-    //parameter dari model pelanggan
+    //parameter dari model Pelanggan
     public void onChange(PenjualanModel model);
     
-    //parameter dari entity databases pelanggan
-    public void onInsert(Penjualan pelanggan);
-    public void onUpdate(Penjualan pelanggan);
+    //parameter dari entity databases Pelanggan
+    public void onInsert(Penjualan Pelanggan);
+    public void onUpdate(Penjualan Pelanggan);
     
     //karna tidak perlu menambahkan data ke dalam tabel,
     //jadi ondelete tidak perlu memasukkan data 

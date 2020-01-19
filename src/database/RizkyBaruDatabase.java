@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class RizkyBaruDatabase {
 
     private static Connection connection;
-    private static PelangganDao pelangganDao;
+    private static PelangganDao PelangganDao;
 
     public static Connection getConnection() throws SQLException {
         if (connection == null) {
@@ -32,9 +32,9 @@ public class RizkyBaruDatabase {
     }
 
     public static PelangganDao getPelangganDao() throws SQLException {
-        if (pelangganDao == null) {
-            pelangganDao = new PenjualanDaoImpl(getConnection());
+        if (PelangganDao == null) {
+            PelangganDao = new PenjualanDaoImpl(getConnection());
         }
-        return pelangganDao;
+        return PelangganDao;
     }
 }

@@ -600,15 +600,15 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     }
 
     @Override
-    public void onInsert(Penjualan pelanggan) {
+    public void onInsert(Penjualan Pelanggan) {
 
-        tabelModel.add(pelanggan);
+        tabelModel.add(Pelanggan);
     }
 
     @Override
-    public void onUpdate(Penjualan pelanggan) {
+    public void onUpdate(Penjualan Pelanggan) {
         int index = tablePenjualan.getSelectedRow();
-        tabelModel.set(index, pelanggan);
+        tabelModel.set(index, Pelanggan);
 
     }
 
@@ -649,7 +649,7 @@ private Connection con;
     private void tampilUntung() {
         
         this.con=con;
-        String selectUntung = "SELECT SUM(Jumlah) FROM `pelanggan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
+        String selectUntung = "SELECT SUM(Jumlah) FROM `Pelanggan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
         Statement statement = null;
         String untung;
         try {
