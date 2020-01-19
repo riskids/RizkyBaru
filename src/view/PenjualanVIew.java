@@ -455,14 +455,14 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

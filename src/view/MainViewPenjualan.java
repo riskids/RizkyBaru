@@ -44,11 +44,11 @@ public class MainViewPenjualan extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pelangganView1, javax.swing.GroupLayout.DEFAULT_SIZE, 1025, Short.MAX_VALUE)
+            .addComponent(pelangganView1, javax.swing.GroupLayout.DEFAULT_SIZE, 1041, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pelangganView1, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
+            .addComponent(pelangganView1, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
         );
 
         pack();
