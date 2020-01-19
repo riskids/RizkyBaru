@@ -112,13 +112,13 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         txtTgl = new javax.swing.JTextField();
         txtJumlah = new javax.swing.JTextField();
         txtGalon = new javax.swing.JTextField();
-        tanggal = new org.jdesktop.swingx.JXDatePicker();
         txtId = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         Label_nama_keuntungan2 = new javax.swing.JLabel();
+        tanggal = new org.jdesktop.swingx.JXDatePicker();
         PanelTabel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePenjualan = new javax.swing.JTable();
@@ -286,14 +286,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         });
         PanelInput.add(txtGalon, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 242, 23));
 
-        tanggal.setName(""); // NOI18N
-        tanggal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tanggalActionPerformed(evt);
-            }
-        });
-        PanelInput.add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 240, 23));
-
         txtId.setEditable(false);
         PanelInput.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 121, -1));
 
@@ -315,6 +307,14 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
         Label_nama_keuntungan2.setText("Ubah Data Penjualan");
         PanelInput.add(Label_nama_keuntungan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+
+        tanggal.setName(""); // NOI18N
+        tanggal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tanggalActionPerformed(evt);
+            }
+        });
+        PanelInput.add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 240, 23));
 
         PanelTabel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -455,7 +455,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -463,7 +463,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
