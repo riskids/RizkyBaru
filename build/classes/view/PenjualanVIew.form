@@ -27,8 +27,7 @@
           <Group type="102" alignment="1" attributes="0">
               <Component id="PanelMenu" pref="310" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="787" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="793" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -259,7 +258,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="20" y="240" width="30" height="-1"/>
+                      <AbsoluteConstraints x="20" y="210" width="30" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>

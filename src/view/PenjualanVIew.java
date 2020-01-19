@@ -261,7 +261,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
                 txtTglActionPerformed(evt);
             }
         });
-        PanelInput.add(txtTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 30, -1));
+        PanelInput.add(txtTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 30, -1));
 
         txtJumlah.setEditable(false);
         txtJumlah.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -457,8 +457,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
