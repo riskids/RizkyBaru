@@ -23,8 +23,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -100,12 +102,9 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         jScrollPane2 = new javax.swing.JScrollPane();
         PanelUtama = new javax.swing.JPanel();
         PanelUntungBulan = new javax.swing.JPanel();
-        Label_tampiUntung = new javax.swing.JLabel();
         Label_nama_keuntungan = new javax.swing.JLabel();
         Label_tampiUntung2 = new javax.swing.JLabel();
-        PanelUntungBulan1 = new javax.swing.JPanel();
-        Label_tampiUntung1 = new javax.swing.JLabel();
-        Label_nama_keuntungan1 = new javax.swing.JLabel();
+        lblTampilUntung = new javax.swing.JLabel();
         PanelInput = new javax.swing.JPanel();
         btnUbah = new javax.swing.JButton();
         btnTambah = new javax.swing.JButton();
@@ -119,18 +118,29 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         jLabel7 = new javax.swing.JLabel();
         Label_nama_keuntungan2 = new javax.swing.JLabel();
         tanggal = new org.jdesktop.swingx.JXDatePicker();
+        PanelUntungBulan2 = new javax.swing.JPanel();
+        Label_tampiUntung3 = new javax.swing.JLabel();
+        Label_nama_keuntungan5 = new javax.swing.JLabel();
         PanelTabel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePenjualan = new javax.swing.JTable();
         btnHapus = new javax.swing.JButton();
         Label_nama_keuntungan3 = new javax.swing.JLabel();
+        PanelUntungBulan3 = new javax.swing.JPanel();
+        Label_nama_keuntungan6 = new javax.swing.JLabel();
+        lblTampilTanki = new javax.swing.JLabel();
+        Label_tampiUntung5 = new javax.swing.JLabel();
+        PanelUntungBulan4 = new javax.swing.JPanel();
+        Label_nama_keuntungan7 = new javax.swing.JLabel();
+        PanelUntungBulan1 = new javax.swing.JPanel();
+        Label_nama_keuntungan1 = new javax.swing.JLabel();
         PanelMenu = new javax.swing.JPanel();
         Label_nama_keuntungan4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnBeliTanki = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -139,19 +149,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         PanelUtama.setBackground(new java.awt.Color(219, 236, 248));
 
         PanelUntungBulan.setBackground(new java.awt.Color(255, 255, 255));
-
-        Label_tampiUntung.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        Label_tampiUntung.setText("tampiluntung()");
-        Label_tampiUntung.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Label_tampiUntungMouseClicked(evt);
-            }
-        });
-        Label_tampiUntung.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Label_tampiUntungKeyPressed(evt);
-            }
-        });
 
         Label_nama_keuntungan.setText("Keuntungan Bulan Ini");
 
@@ -168,71 +165,43 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             }
         });
 
+        lblTampilUntung.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblTampilUntung.setText("tampiluntung()");
+        lblTampilUntung.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTampilUntungMouseClicked(evt);
+            }
+        });
+        lblTampilUntung.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lblTampilUntungKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelUntungBulanLayout = new javax.swing.GroupLayout(PanelUntungBulan);
         PanelUntungBulan.setLayout(PanelUntungBulanLayout);
         PanelUntungBulanLayout.setHorizontalGroup(
             PanelUntungBulanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelUntungBulanLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelUntungBulanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelUntungBulanLayout.createSequentialGroup()
-                        .addComponent(Label_nama_keuntungan)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PanelUntungBulanLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Label_tampiUntung2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Label_tampiUntung)
-                        .addGap(48, 48, 48))))
+                .addComponent(Label_nama_keuntungan)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulanLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Label_tampiUntung2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTampilUntung)
+                .addGap(24, 24, 24))
         );
         PanelUntungBulanLayout.setVerticalGroup(
             PanelUntungBulanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulanLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(PanelUntungBulanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_tampiUntung, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Label_tampiUntung2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
-        );
-
-        PanelUntungBulan1.setBackground(new java.awt.Color(255, 255, 255));
-
-        Label_tampiUntung1.setText("tampiluntung()");
-        Label_tampiUntung1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Label_tampiUntung1MouseClicked(evt);
-            }
-        });
-        Label_tampiUntung1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Label_tampiUntung1KeyPressed(evt);
-            }
-        });
-
-        Label_nama_keuntungan1.setText("Keuntungan Bulan Ini");
-
-        javax.swing.GroupLayout PanelUntungBulan1Layout = new javax.swing.GroupLayout(PanelUntungBulan1);
-        PanelUntungBulan1.setLayout(PanelUntungBulan1Layout);
-        PanelUntungBulan1Layout.setHorizontalGroup(
-            PanelUntungBulan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelUntungBulan1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Label_nama_keuntungan1)
-                .addContainerGap(204, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Label_tampiUntung1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        PanelUntungBulan1Layout.setVerticalGroup(
-            PanelUntungBulan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Label_nama_keuntungan1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(Label_tampiUntung1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Label_tampiUntung2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTampilUntung, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
         );
 
@@ -316,6 +285,47 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         });
         PanelInput.add(tanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 240, 23));
 
+        PanelUntungBulan2.setBackground(new java.awt.Color(255, 255, 255));
+
+        Label_tampiUntung3.setText("tampiluntung()");
+        Label_tampiUntung3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Label_tampiUntung3MouseClicked(evt);
+            }
+        });
+        Label_tampiUntung3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Label_tampiUntung3KeyPressed(evt);
+            }
+        });
+
+        Label_nama_keuntungan5.setText("Galon Terjual Bulan Ini");
+
+        javax.swing.GroupLayout PanelUntungBulan2Layout = new javax.swing.GroupLayout(PanelUntungBulan2);
+        PanelUntungBulan2.setLayout(PanelUntungBulan2Layout);
+        PanelUntungBulan2Layout.setHorizontalGroup(
+            PanelUntungBulan2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelUntungBulan2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_nama_keuntungan5)
+                .addContainerGap(204, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Label_tampiUntung3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        PanelUntungBulan2Layout.setVerticalGroup(
+            PanelUntungBulan2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_nama_keuntungan5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(Label_tampiUntung3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
+
+        PanelInput.add(PanelUntungBulan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, -50, -1, -1));
+
         PanelTabel.setBackground(new java.awt.Color(255, 255, 255));
 
         tablePenjualan.setModel(new javax.swing.table.DefaultTableModel(
@@ -371,6 +381,105 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
                 .addGap(43, 43, 43))
         );
 
+        PanelUntungBulan3.setBackground(new java.awt.Color(255, 255, 255));
+
+        Label_nama_keuntungan6.setText("Jumlah Pembelian Tanki");
+
+        lblTampilTanki.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblTampilTanki.setText("tampiluntung()");
+        lblTampilTanki.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTampilTankiMouseClicked(evt);
+            }
+        });
+        lblTampilTanki.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lblTampilTankiKeyPressed(evt);
+            }
+        });
+
+        Label_tampiUntung5.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Label_tampiUntung5.setText("Rp.");
+        Label_tampiUntung5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Label_tampiUntung5MouseClicked(evt);
+            }
+        });
+        Label_tampiUntung5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Label_tampiUntung5KeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelUntungBulan3Layout = new javax.swing.GroupLayout(PanelUntungBulan3);
+        PanelUntungBulan3.setLayout(PanelUntungBulan3Layout);
+        PanelUntungBulan3Layout.setHorizontalGroup(
+            PanelUntungBulan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelUntungBulan3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_nama_keuntungan6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Label_tampiUntung5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTampilTanki)
+                .addGap(23, 23, 23))
+        );
+        PanelUntungBulan3Layout.setVerticalGroup(
+            PanelUntungBulan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_nama_keuntungan6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addGroup(PanelUntungBulan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTampilTanki, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Label_tampiUntung5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
+        );
+
+        PanelUntungBulan4.setBackground(new java.awt.Color(255, 255, 255));
+
+        Label_nama_keuntungan7.setText("Jumlah Pembelian Tanki");
+
+        javax.swing.GroupLayout PanelUntungBulan4Layout = new javax.swing.GroupLayout(PanelUntungBulan4);
+        PanelUntungBulan4.setLayout(PanelUntungBulan4Layout);
+        PanelUntungBulan4Layout.setHorizontalGroup(
+            PanelUntungBulan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelUntungBulan4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_nama_keuntungan7)
+                .addContainerGap(184, Short.MAX_VALUE))
+        );
+        PanelUntungBulan4Layout.setVerticalGroup(
+            PanelUntungBulan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelUntungBulan4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_nama_keuntungan7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        PanelUntungBulan1.setBackground(new java.awt.Color(255, 255, 255));
+
+        Label_nama_keuntungan1.setText("Galon Terjual Bulan Ini");
+
+        javax.swing.GroupLayout PanelUntungBulan1Layout = new javax.swing.GroupLayout(PanelUntungBulan1);
+        PanelUntungBulan1.setLayout(PanelUntungBulan1Layout);
+        PanelUntungBulan1Layout.setHorizontalGroup(
+            PanelUntungBulan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelUntungBulan1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_nama_keuntungan1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelUntungBulan1Layout.setVerticalGroup(
+            PanelUntungBulan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Label_nama_keuntungan1)
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout PanelUtamaLayout = new javax.swing.GroupLayout(PanelUtama);
         PanelUtama.setLayout(PanelUtamaLayout);
         PanelUtamaLayout.setHorizontalGroup(
@@ -378,26 +487,34 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             .addGroup(PanelUtamaLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelTabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelTabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUtamaLayout.createSequentialGroup()
-                        .addComponent(PanelUntungBulan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PanelUntungBulan3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PanelUntungBulan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(PanelUntungBulan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(231, Short.MAX_VALUE))
+                        .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PanelUntungBulan1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PanelUntungBulan4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         PanelUtamaLayout.setVerticalGroup(
             PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUtamaLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(39, 39, 39)
+                .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PanelUntungBulan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelUntungBulan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelUntungBulan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelUntungBulan1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PanelUntungBulan3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelUntungBulan4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(PanelInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(PanelTabel, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jScrollPane2.setViewportView(PanelUtama);
@@ -436,12 +553,17 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         jButton4.setContentAreaFilled(false);
         PanelMenu.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 199, 167, 26));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Beli Air Tangki");
-        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton1.setContentAreaFilled(false);
-        PanelMenu.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 361, 167, 26));
+        btnBeliTanki.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnBeliTanki.setForeground(new java.awt.Color(255, 255, 255));
+        btnBeliTanki.setText("Beli Air Tangki");
+        btnBeliTanki.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnBeliTanki.setContentAreaFilled(false);
+        btnBeliTanki.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBeliTankiActionPerformed(evt);
+            }
+        });
+        PanelMenu.add(btnBeliTanki, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 361, 167, 26));
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -455,14 +577,14 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -471,15 +593,15 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         controller.deletePenjualan(this);
     }//GEN-LAST:event_btnHapusActionPerformed
 
-    private void Label_tampiUntungKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntungKeyPressed
+    private void lblTampilTankiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblTampilTankiKeyPressed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_Label_tampiUntungKeyPressed
+    }//GEN-LAST:event_lblTampilTankiKeyPressed
 
-    private void Label_tampiUntungMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntungMouseClicked
+    private void lblTampilTankiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTampilTankiMouseClicked
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_Label_tampiUntungMouseClicked
+    }//GEN-LAST:event_lblTampilTankiMouseClicked
 
     private void txtJumlahKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtJumlahKeyTyped
         // TODO add your handling code here:
@@ -536,14 +658,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         controller.updatePenjualan(this);
     }//GEN-LAST:event_btnUbahActionPerformed
 
-    private void Label_tampiUntung1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Label_tampiUntung1MouseClicked
-
-    private void Label_tampiUntung1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntung1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Label_tampiUntung1KeyPressed
-
     private void Label_tampiUntung2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung2MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_Label_tampiUntung2MouseClicked
@@ -552,6 +666,35 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         // TODO add your handling code here:
     }//GEN-LAST:event_Label_tampiUntung2KeyPressed
 
+    private void btnBeliTankiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBeliTankiActionPerformed
+        // TODO add your handling code here:
+        isiTanki(this);
+    }//GEN-LAST:event_btnBeliTankiActionPerformed
+
+    private void Label_tampiUntung3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_tampiUntung3MouseClicked
+
+    private void Label_tampiUntung3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntung3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_tampiUntung3KeyPressed
+
+    private void lblTampilUntungMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTampilUntungMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTampilUntungMouseClicked
+
+    private void lblTampilUntungKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblTampilUntungKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTampilUntungKeyPressed
+
+    private void Label_tampiUntung5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_tampiUntung5MouseClicked
+
+    private void Label_tampiUntung5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntung5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_tampiUntung5KeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Label_nama_keuntungan;
@@ -559,19 +702,25 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private javax.swing.JLabel Label_nama_keuntungan2;
     private javax.swing.JLabel Label_nama_keuntungan3;
     private javax.swing.JLabel Label_nama_keuntungan4;
-    private javax.swing.JLabel Label_tampiUntung;
-    private javax.swing.JLabel Label_tampiUntung1;
+    private javax.swing.JLabel Label_nama_keuntungan5;
+    private javax.swing.JLabel Label_nama_keuntungan6;
+    private javax.swing.JLabel Label_nama_keuntungan7;
     private javax.swing.JLabel Label_tampiUntung2;
+    private javax.swing.JLabel Label_tampiUntung3;
+    private javax.swing.JLabel Label_tampiUntung5;
     private javax.swing.JPanel PanelInput;
     private javax.swing.JPanel PanelMenu;
     private javax.swing.JPanel PanelTabel;
     private javax.swing.JPanel PanelUntungBulan;
     private javax.swing.JPanel PanelUntungBulan1;
+    private javax.swing.JPanel PanelUntungBulan2;
+    private javax.swing.JPanel PanelUntungBulan3;
+    private javax.swing.JPanel PanelUntungBulan4;
     private javax.swing.JPanel PanelUtama;
+    private javax.swing.JButton btnBeliTanki;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnUbah;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -583,6 +732,8 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblTampilTanki;
+    private javax.swing.JLabel lblTampilUntung;
     private javax.swing.JTable tablePenjualan;
     private org.jdesktop.swingx.JXDatePicker tanggal;
     private javax.swing.JTextField txtGalon;
@@ -645,22 +796,78 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     
 private Connection con;
 
-
-    private void tampilUntung() {
+//class ambil database
+    private String tampilUntung() {
         
         this.con=con;
         String selectUntung = "SELECT SUM(Jumlah) FROM `Penjualan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
         Statement statement = null;
-        String untung;
+        Integer untung,total,tanki;
+        String tampil_total;
         try {
             
             statement = getConnection().createStatement();
 
             ResultSet result = statement.executeQuery(selectUntung);
             result.next();
-            untung = result.getString("SUM(Jumlah)");
+            untung = Integer.parseInt(result.getString("SUM(Jumlah)"));
             
-            Label_tampiUntung.setText(untung);
+            tanki = Integer.parseInt(tampilTanki());
+            total = untung - tanki;
+            tampil_total = Integer.toString(total);
+            
+            lblTampilUntung.setText(tampil_total);
+            return tampil_total;
+        } 
+        
+        
+        catch (SQLException exception) {
+            showMessageDialog(null, exception);
+            return null;
+        }
+        
+
+    }
+    
+    private String tampilTanki() {
+        
+        this.con=con;
+        String selectUntung = "SELECT SUM(harga_tanki) FROM `beli_tanki` WHERE tanggal LIKE '"+ hariIni()+"%' " ;
+        Statement statement = null;
+        String tanki;
+        try {
+            
+            statement = getConnection().createStatement();
+
+            ResultSet result = statement.executeQuery(selectUntung);
+            result.next();
+            tanki = result.getString("SUM(harga_tanki)");
+            
+            lblTampilTanki.setText(tanki);
+            return tanki;
+        } 
+        
+        
+        catch (SQLException exception) {
+            showMessageDialog(null, exception);
+            return null;
+        }
+        
+
+    }
+
+    private void isiTanki(PenjualanVIew view) {
+        
+        this.con=con;
+        String insertTanki = "INSERT INTO `beli_tanki`(`harga_tanki`, `tanggal`) VALUES ('1' , '" + hariIniFull()  + "')";
+        Statement statement = null;
+        String tanki;
+        try {
+            
+            statement = getConnection().createStatement();
+            statement.executeUpdate(insertTanki);
+            
+            JOptionPane.showMessageDialog(view , "Berhasil Input Data");
         } 
         
         
@@ -670,10 +877,19 @@ private Connection con;
         }
 
     }
-
+    
     private String hariIni() {
         Calendar cals = Calendar.getInstance();
         SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM");
+       
+        String hari_ini = formater.format(cals.getTime());
+        return hari_ini;
+    }
+    
+    private String hariIniFull() {
+        Calendar cals = GregorianCalendar.getInstance();
+        
+        SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd"); 
        
         String hari_ini = formater.format(cals.getTime());
         return hari_ini;
