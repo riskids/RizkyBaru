@@ -36,6 +36,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.TableModel;
 import org.jdesktop.swingx.JXDatePicker;
+import view.isiTanki;
 
 /**
  *
@@ -166,7 +167,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         });
 
         lblTampilUntung.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblTampilUntung.setText("tampiluntung()");
+        lblTampilUntung.setText("0");
         lblTampilUntung.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblTampilUntungMouseClicked(evt);
@@ -233,6 +234,11 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         PanelInput.add(txtTgl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 30, -1));
 
         txtJumlah.setEditable(false);
+        txtJumlah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtJumlahActionPerformed(evt);
+            }
+        });
         txtJumlah.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtJumlahKeyTyped(evt);
@@ -386,7 +392,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         Label_nama_keuntungan6.setText("Jumlah Pembelian Tanki");
 
         lblTampilTanki.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lblTampilTanki.setText("tampiluntung()");
+        lblTampilTanki.setText("0");
         lblTampilTanki.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblTampilTankiMouseClicked(evt);
@@ -668,7 +674,10 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
     private void btnBeliTankiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBeliTankiActionPerformed
         // TODO add your handling code here:
-        isiTanki(this);
+        
+        isiTanki isitank = new isiTanki();
+        isitank.setVisible(true);
+        
     }//GEN-LAST:event_btnBeliTankiActionPerformed
 
     private void Label_tampiUntung3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung3MouseClicked
@@ -694,6 +703,10 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private void Label_tampiUntung5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntung5KeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_Label_tampiUntung5KeyPressed
+
+    private void txtJumlahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJumlahActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtJumlahActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -803,7 +816,7 @@ private Connection con;
         String selectUntung = "SELECT SUM(Jumlah) FROM `Penjualan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
         Statement statement = null;
         Integer untung,total,tanki;
-        String tampil_total;
+        String tampil_total,tankicek;
         try {
             
             statement = getConnection().createStatement();
@@ -812,18 +825,26 @@ private Connection con;
             result.next();
             untung = Integer.parseInt(result.getString("SUM(Jumlah)"));
             
-            tanki = Integer.parseInt(tampilTanki());
-            total = untung - tanki;
-            tampil_total = Integer.toString(total);
+            tankicek = tampilTanki();
+            if (tankicek == null) {
+                JOptionPane.showMessageDialog(this , "Data Tanki Masih Kosong!");
+                return tampil_total = "0";
+            } else {
+                tanki = Integer.parseInt(tankicek);
+                total = untung - tanki;
+                tampil_total = Integer.toString(total);
             
             lblTampilUntung.setText(tampil_total);
             return tampil_total;
+            }
+            
+            
         } 
         
         
         catch (SQLException exception) {
             showMessageDialog(null, exception);
-            return null;
+            return tampil_total = "0";
         }
         
 
@@ -843,23 +864,31 @@ private Connection con;
             result.next();
             tanki = result.getString("SUM(harga_tanki)");
             
-            lblTampilTanki.setText(tanki);
-            return tanki;
+            if (tanki == "") {
+                JOptionPane.showMessageDialog(this , "Data Tanki Masih Kosong!");
+                return tanki = "";
+            } else { 
+                lblTampilTanki.setText(tanki);
+                return tanki;
+            }
+            
+           
         } 
         
         
         catch (SQLException exception) {
             showMessageDialog(null, exception);
-            return null;
+            return tanki = "";
         }
         
 
     }
 
-    private void isiTanki(PenjualanVIew view) {
+    public void isiTanki(String text) {
         
+       
         this.con=con;
-        String insertTanki = "INSERT INTO `beli_tanki`(`harga_tanki`, `tanggal`) VALUES ('1' , '" + hariIniFull()  + "')";
+        String insertTanki = "INSERT INTO `beli_tanki`(`harga_tanki`, `tanggal`) VALUES ('"+ text +"' , '" + hariIniFull()  + "')";
         Statement statement = null;
         String tanki;
         try {
@@ -867,7 +896,7 @@ private Connection con;
             statement = getConnection().createStatement();
             statement.executeUpdate(insertTanki);
             
-            JOptionPane.showMessageDialog(view , "Berhasil Input Data");
+            JOptionPane.showMessageDialog(this , "Berhasil Input Data");
         } 
         
         

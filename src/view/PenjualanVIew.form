@@ -159,7 +159,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="24" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="tampiluntung()"/>
+                    <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTampilUntungMouseClicked"/>
@@ -223,6 +223,7 @@
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtJumlahActionPerformed"/>
                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtJumlahKeyTyped"/>
                   </Events>
                   <Constraints>
@@ -534,7 +535,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="24" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="tampiluntung()"/>
+                    <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTampilTankiMouseClicked"/>
