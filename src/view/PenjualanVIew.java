@@ -583,6 +583,11 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         jButton3.setText("Ubah Harga");
         jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         PanelMenu.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 167, 26));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -756,6 +761,12 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private void lblTampilTankiSatuanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblTampilTankiSatuanKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTampilTankiSatuanKeyPressed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+       updateHarga harga = new updateHarga();
+       harga.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1014,6 +1025,30 @@ private Connection con;
 
     }
 
+        
+    
+     public void updateHarga(String harga) {
+        
+       
+        this.con=con;
+        String updateHarga = "UPDATE `harga_galon` SET `harga`=" +  harga   + " WHERE 1 ";
+        Statement statement = null;
+        try {
+            
+            statement = getConnection().createStatement();
+            statement.executeUpdate(updateHarga);
+            
+            JOptionPane.showMessageDialog(this , "Berhasil Update Data Jadi ");
+        } 
+        
+        
+        catch (SQLException exception) {
+            showMessageDialog(null, exception);
+            
+        }
+
+    }    
+        
     public void isiTanki(String text) {
         
        
