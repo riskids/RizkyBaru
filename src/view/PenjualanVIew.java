@@ -142,7 +142,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         PanelMenu = new javax.swing.JPanel();
         Label_nama_keuntungan4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         btnBeliTanki = new javax.swing.JButton();
@@ -579,19 +578,12 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         jLabel1.setText("Dashboard");
         PanelMenu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 80, 20));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Input Penjualan");
-        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton2.setContentAreaFilled(false);
-        PanelMenu.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 253, 170, 26));
-
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Ubah Harga");
         jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton3.setContentAreaFilled(false);
-        PanelMenu.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 307, 167, 26));
+        PanelMenu.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 167, 26));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -610,7 +602,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
                 btnBeliTankiActionPerformed(evt);
             }
         });
-        PanelMenu.add(btnBeliTanki, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 361, 167, 26));
+        PanelMenu.add(btnBeliTanki, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 167, 26));
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -791,7 +783,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnUbah;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
