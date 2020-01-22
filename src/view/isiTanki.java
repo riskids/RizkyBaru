@@ -40,7 +40,7 @@ public class isiTanki extends javax.swing.JFrame {
         txtInputTanki = new javax.swing.JTextField();
         btn_simpan_Tanki = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(44, 148, 230));
 
         Label_nama_keuntungan4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         Label_nama_keuntungan4.setForeground(new java.awt.Color(255, 255, 255));
@@ -84,9 +84,9 @@ public class isiTanki extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(Label_nama_keuntungan4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtInputTanki, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
+                .addComponent(txtInputTanki, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_simpan_Tanki)
                 .addContainerGap(97, Short.MAX_VALUE))
         );
@@ -116,6 +116,7 @@ public class isiTanki extends javax.swing.JFrame {
         getTankiField();
         PenjualanVIew penjualan = new PenjualanVIew();
         penjualan.isiTanki(getTankiField().getText());
+        this.setVisible(false);
     }//GEN-LAST:event_btn_simpan_TankiActionPerformed
 
     private void txtInputTankiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInputTankiKeyTyped

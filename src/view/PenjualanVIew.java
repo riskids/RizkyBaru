@@ -64,6 +64,8 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         tablePenjualan.setModel(tabelModel);
         
         tampilUntung();
+        tampilGalon();
+        tampilTankiSatuan();
         
         txtTgl.setVisible(false);
         
@@ -104,7 +106,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         PanelUtama = new javax.swing.JPanel();
         PanelUntungBulan = new javax.swing.JPanel();
         Label_nama_keuntungan = new javax.swing.JLabel();
-        Label_tampiUntung2 = new javax.swing.JLabel();
         lblTampilUntung = new javax.swing.JLabel();
         PanelInput = new javax.swing.JPanel();
         btnUbah = new javax.swing.JButton();
@@ -120,7 +121,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         Label_nama_keuntungan2 = new javax.swing.JLabel();
         tanggal = new org.jdesktop.swingx.JXDatePicker();
         PanelUntungBulan2 = new javax.swing.JPanel();
-        Label_tampiUntung3 = new javax.swing.JLabel();
         Label_nama_keuntungan5 = new javax.swing.JLabel();
         PanelTabel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -133,8 +133,12 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         Label_tampiUntung5 = new javax.swing.JLabel();
         PanelUntungBulan4 = new javax.swing.JPanel();
         Label_nama_keuntungan7 = new javax.swing.JLabel();
+        Label_tampiUntung3 = new javax.swing.JLabel();
+        lblTampilTankiSatuan = new javax.swing.JLabel();
         PanelUntungBulan1 = new javax.swing.JPanel();
         Label_nama_keuntungan1 = new javax.swing.JLabel();
+        lblTampilGalon = new javax.swing.JLabel();
+        Label_tampiUntung2 = new javax.swing.JLabel();
         PanelMenu = new javax.swing.JPanel();
         Label_nama_keuntungan4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -152,19 +156,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         PanelUntungBulan.setBackground(new java.awt.Color(255, 255, 255));
 
         Label_nama_keuntungan.setText("Keuntungan Bulan Ini");
-
-        Label_tampiUntung2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        Label_tampiUntung2.setText("Rp.");
-        Label_tampiUntung2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Label_tampiUntung2MouseClicked(evt);
-            }
-        });
-        Label_tampiUntung2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Label_tampiUntung2KeyPressed(evt);
-            }
-        });
 
         lblTampilUntung.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblTampilUntung.setText("0");
@@ -186,11 +177,9 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             .addGroup(PanelUntungBulanLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 216, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulanLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Label_tampiUntung2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTampilUntung)
                 .addGap(24, 24, 24))
         );
@@ -200,9 +189,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addGroup(PanelUntungBulanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_tampiUntung2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTampilUntung, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblTampilUntung, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
 
@@ -293,18 +280,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
         PanelUntungBulan2.setBackground(new java.awt.Color(255, 255, 255));
 
-        Label_tampiUntung3.setText("tampiluntung()");
-        Label_tampiUntung3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Label_tampiUntung3MouseClicked(evt);
-            }
-        });
-        Label_tampiUntung3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Label_tampiUntung3KeyPressed(evt);
-            }
-        });
-
         Label_nama_keuntungan5.setText("Galon Terjual Bulan Ini");
 
         javax.swing.GroupLayout PanelUntungBulan2Layout = new javax.swing.GroupLayout(PanelUntungBulan2);
@@ -315,19 +290,13 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan5)
                 .addContainerGap(204, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Label_tampiUntung3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         PanelUntungBulan2Layout.setVerticalGroup(
             PanelUntungBulan2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(Label_tampiUntung3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         PanelInput.add(PanelUntungBulan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, -50, -1, -1));
@@ -446,7 +415,33 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
         PanelUntungBulan4.setBackground(new java.awt.Color(255, 255, 255));
 
-        Label_nama_keuntungan7.setText("Jumlah Pembelian Tanki");
+        Label_nama_keuntungan7.setText("Jumlah Pembelian Tanki Bulan Ini");
+
+        Label_tampiUntung3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Label_tampiUntung3.setText("Tanki");
+        Label_tampiUntung3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Label_tampiUntung3MouseClicked(evt);
+            }
+        });
+        Label_tampiUntung3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Label_tampiUntung3KeyPressed(evt);
+            }
+        });
+
+        lblTampilTankiSatuan.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblTampilTankiSatuan.setText("0");
+        lblTampilTankiSatuan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTampilTankiSatuanMouseClicked(evt);
+            }
+        });
+        lblTampilTankiSatuan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lblTampilTankiSatuanKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelUntungBulan4Layout = new javax.swing.GroupLayout(PanelUntungBulan4);
         PanelUntungBulan4.setLayout(PanelUntungBulan4Layout);
@@ -455,19 +450,55 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             .addGroup(PanelUntungBulan4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan7)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTampilTankiSatuan)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Label_tampiUntung3)
+                .addGap(18, 18, 18))
         );
         PanelUntungBulan4Layout.setVerticalGroup(
             PanelUntungBulan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelUntungBulan4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelUntungBulan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Label_tampiUntung3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTampilTankiSatuan, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
 
         PanelUntungBulan1.setBackground(new java.awt.Color(255, 255, 255));
 
         Label_nama_keuntungan1.setText("Galon Terjual Bulan Ini");
+
+        lblTampilGalon.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblTampilGalon.setText("0");
+        lblTampilGalon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTampilGalonMouseClicked(evt);
+            }
+        });
+        lblTampilGalon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lblTampilGalonKeyPressed(evt);
+            }
+        });
+
+        Label_tampiUntung2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Label_tampiUntung2.setText("Galon");
+        Label_tampiUntung2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Label_tampiUntung2MouseClicked(evt);
+            }
+        });
+        Label_tampiUntung2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Label_tampiUntung2KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelUntungBulan1Layout = new javax.swing.GroupLayout(PanelUntungBulan1);
         PanelUntungBulan1.setLayout(PanelUntungBulan1Layout);
@@ -476,14 +507,24 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             .addGroup(PanelUntungBulan1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(198, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTampilGalon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Label_tampiUntung2)
+                .addGap(16, 16, 16))
         );
         PanelUntungBulan1Layout.setVerticalGroup(
             PanelUntungBulan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan1)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGroup(PanelUntungBulan1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTampilGalon, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Label_tampiUntung2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout PanelUtamaLayout = new javax.swing.GroupLayout(PanelUtama);
@@ -583,14 +624,14 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -664,14 +705,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         controller.updatePenjualan(this);
     }//GEN-LAST:event_btnUbahActionPerformed
 
-    private void Label_tampiUntung2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Label_tampiUntung2MouseClicked
-
-    private void Label_tampiUntung2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntung2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Label_tampiUntung2KeyPressed
-
     private void btnBeliTankiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBeliTankiActionPerformed
         // TODO add your handling code here:
         
@@ -679,14 +712,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         isitank.setVisible(true);
         
     }//GEN-LAST:event_btnBeliTankiActionPerformed
-
-    private void Label_tampiUntung3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Label_tampiUntung3MouseClicked
-
-    private void Label_tampiUntung3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntung3KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Label_tampiUntung3KeyPressed
 
     private void lblTampilUntungMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTampilUntungMouseClicked
         // TODO add your handling code here:
@@ -707,6 +732,38 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private void txtJumlahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJumlahActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtJumlahActionPerformed
+
+    private void lblTampilGalonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTampilGalonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTampilGalonMouseClicked
+
+    private void lblTampilGalonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblTampilGalonKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTampilGalonKeyPressed
+
+    private void Label_tampiUntung2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntung2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_tampiUntung2KeyPressed
+
+    private void Label_tampiUntung2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_tampiUntung2MouseClicked
+
+    private void Label_tampiUntung3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Label_tampiUntung3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_tampiUntung3MouseClicked
+
+    private void Label_tampiUntung3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Label_tampiUntung3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Label_tampiUntung3KeyPressed
+
+    private void lblTampilTankiSatuanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTampilTankiSatuanMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTampilTankiSatuanMouseClicked
+
+    private void lblTampilTankiSatuanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lblTampilTankiSatuanKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTampilTankiSatuanKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -745,7 +802,9 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblTampilGalon;
     private javax.swing.JLabel lblTampilTanki;
+    private javax.swing.JLabel lblTampilTankiSatuan;
     private javax.swing.JLabel lblTampilUntung;
     private javax.swing.JTable tablePenjualan;
     private org.jdesktop.swingx.JXDatePicker tanggal;
@@ -810,13 +869,14 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 private Connection con;
 
 //class ambil database
+ 
     private String tampilUntung() {
         
         this.con=con;
         String selectUntung = "SELECT SUM(Jumlah) FROM `Penjualan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
         Statement statement = null;
         Integer untung,total,tanki;
-        String tampil_total,tankicek;
+        String tampil_total,tankicek,untungKosong;
         try {
             
             statement = getConnection().createStatement();
@@ -825,17 +885,96 @@ private Connection con;
             result.next();
             untung = Integer.parseInt(result.getString("SUM(Jumlah)"));
             
+            untungKosong = Integer.toString(untung);
             tankicek = tampilTanki();
+            
             if (tankicek == null) {
-                JOptionPane.showMessageDialog(this , "Data Tanki Masih Kosong!");
-                return tampil_total = "0";
+                
+                lblTampilUntung.setText(untungKosong);
+                return tampil_total = untungKosong;
+                
             } else {
                 tanki = Integer.parseInt(tankicek);
                 total = untung - tanki;
                 tampil_total = Integer.toString(total);
             
-            lblTampilUntung.setText(tampil_total);
+                 lblTampilUntung.setText(tampil_total);
             return tampil_total;
+            }
+            
+            
+        } 
+        
+        
+        catch (SQLException exception) {
+            showMessageDialog(null, exception);
+            return tampil_total = "0";
+        }
+        
+
+    }
+
+    
+    private String tampilTankiSatuan() {
+        
+        this.con=con;
+        String selectUntung = "SELECT COUNT(*) FROM `beli_tanki`" ;
+        Statement statement = null;
+        Integer total;
+        String ambilKolomTanki;
+        try {
+            
+            statement = getConnection().createStatement();
+
+            ResultSet result = statement.executeQuery(selectUntung);
+            result.next();
+            ambilKolomTanki = result.getString("COUNT(*)");
+            
+            if (ambilKolomTanki == "") {
+                
+                lblTampilTankiSatuan.setText("0");
+                return "0";
+                
+            } else {
+                lblTampilTankiSatuan.setText(ambilKolomTanki);
+                return ambilKolomTanki;
+            }
+            
+            
+        } 
+        
+        
+        catch (SQLException exception) {
+            showMessageDialog(null, exception);
+            return ambilKolomTanki = "0";
+        }
+        
+
+    }
+    
+    private String tampilGalon() {
+        
+        this.con=con;
+        String selectUntung = "SELECT SUM(galon_terjual) FROM `Penjualan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
+        Statement statement = null;
+        Integer total,tanki;
+        String tampil_total,ambilGalon;
+        try {
+            
+            statement = getConnection().createStatement();
+
+            ResultSet result = statement.executeQuery(selectUntung);
+            result.next();
+            ambilGalon = result.getString("SUM(galon_terjual)");
+            
+            if (ambilGalon == "") {
+                
+                lblTampilGalon.setText("0");
+                return "0";
+                
+            } else {
+                lblTampilGalon.setText(ambilGalon);
+                return ambilGalon;
             }
             
             
@@ -896,7 +1035,7 @@ private Connection con;
             statement = getConnection().createStatement();
             statement.executeUpdate(insertTanki);
             
-            JOptionPane.showMessageDialog(this , "Berhasil Input Data");
+            JOptionPane.showMessageDialog(this , "Berhasil Input Tanki");
         } 
         
         
@@ -920,7 +1059,7 @@ private Connection con;
         
         SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd"); 
        
-        String hari_ini = formater.format(cals.getTime());
+        String hari_ini = formater.format(cals.getTime());  
         return hari_ini;
     }
 }
