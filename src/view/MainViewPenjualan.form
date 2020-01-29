@@ -24,17 +24,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="penjualanVIew1" alignment="0" pref="1041" max="32767" attributes="0"/>
+          <Component id="penjualanVIew2" alignment="0" pref="1013" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="penjualanVIew1" alignment="0" pref="703" max="32767" attributes="0"/>
+          <Component id="penjualanVIew2" alignment="0" pref="703" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="view.PenjualanVIew" name="penjualanVIew1">
+    <Component class="view.PenjualanVIew" name="penjualanVIew2">
     </Component>
   </SubComponents>
 </Form>

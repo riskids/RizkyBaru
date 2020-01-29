@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import view.LoginView;
 
 /**
  *
@@ -30,10 +31,15 @@ public class MainClassRizkyBaru {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+                
+                LoginView login = new LoginView();
+                login.setVisible(true);
+                
                 try {
                     MainViewPenjualan Penjualan = new MainViewPenjualan();
                     Penjualan.loadDatabase();
-                    Penjualan.setVisible(true);
+                    Penjualan.setVisible(false);
+                    
                     
                 } catch (SQLException ex) {
                 } catch (PenjualanException ex) {

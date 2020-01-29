@@ -5,7 +5,6 @@
  */
 package view;
 
-import view.Canvas;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import controller.PenjualanController;
 import database.RizkyBaruDatabase;
@@ -153,6 +152,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
         PanelUntungBulan.setBackground(new java.awt.Color(255, 255, 255));
 
+        Label_nama_keuntungan.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         Label_nama_keuntungan.setText("Keuntungan Bulan Ini");
 
         lblTampilUntung.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -175,7 +175,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             .addGroup(PanelUntungBulanLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan)
-                .addGap(0, 216, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulanLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTampilUntung)
@@ -356,6 +356,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
         PanelUntungBulan3.setBackground(new java.awt.Color(255, 255, 255));
 
+        Label_nama_keuntungan6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         Label_nama_keuntungan6.setText("Jumlah Pembelian Tanki");
 
         lblTampilTanki.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -413,6 +414,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
         PanelUntungBulan4.setBackground(new java.awt.Color(255, 255, 255));
 
+        Label_nama_keuntungan7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         Label_nama_keuntungan7.setText("Jumlah Pembelian Tanki Bulan Ini");
 
         Label_tampiUntung3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -448,7 +450,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             .addGroup(PanelUntungBulan4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTampilTankiSatuan)
@@ -470,6 +472,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
 
         PanelUntungBulan1.setBackground(new java.awt.Color(255, 255, 255));
 
+        Label_nama_keuntungan1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         Label_nama_keuntungan1.setText("Galon Terjual Bulan Ini");
 
         lblTampilGalon.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -505,7 +508,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             .addGroup(PanelUntungBulan1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Label_nama_keuntungan1)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUntungBulan1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTampilGalon)
@@ -531,35 +534,38 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelUtamaLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelTabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUtamaLayout.createSequentialGroup()
+                .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelUtamaLayout.createSequentialGroup()
                         .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PanelUntungBulan3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(PanelUntungBulan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PanelUntungBulan1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PanelUntungBulan4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(74, Short.MAX_VALUE))
+                            .addComponent(PanelUntungBulan4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PanelUntungBulan1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(42, 42, 42))
+                    .addGroup(PanelUtamaLayout.createSequentialGroup()
+                        .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(PanelTabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PanelInput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 42, Short.MAX_VALUE))))
         );
         PanelUtamaLayout.setVerticalGroup(
             PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelUtamaLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+            .addGroup(PanelUtamaLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(PanelUntungBulan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelUntungBulan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(18, 18, 18)
+                .addGroup(PanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelUntungBulan3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelUntungBulan4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(PanelInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(PanelTabel, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(23, 23, 23))
         );
 
         jScrollPane2.setViewportView(PanelUtama);
@@ -613,14 +619,18 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 245, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 799, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
