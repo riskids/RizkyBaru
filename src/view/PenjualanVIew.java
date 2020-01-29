@@ -92,7 +92,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         return txtJumlah;
     }
    
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -143,7 +143,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         Label_nama_keuntungan4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         btnBeliTanki = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -588,14 +587,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
                 jButton3ActionPerformed(evt);
             }
         });
-        PanelMenu.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 167, 26));
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Beranda");
-        jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton4.setContentAreaFilled(false);
-        PanelMenu.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 199, 167, 26));
+        PanelMenu.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 167, 26));
 
         btnBeliTanki.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnBeliTanki.setForeground(new java.awt.Color(255, 255, 255));
@@ -607,7 +599,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
                 btnBeliTankiActionPerformed(evt);
             }
         });
-        PanelMenu.add(btnBeliTanki, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 167, 26));
+        PanelMenu.add(btnBeliTanki, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 167, 26));
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -621,14 +613,14 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+            .addComponent(PanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -667,8 +659,9 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private void txtGalonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGalonKeyReleased
         // TODO add your handling code here:
         Integer ketikGalon,jumlah;
-        Integer hargaGalon = 3500;
-
+        Integer hargaGalon = ambilHargaGalon();
+        
+        
         ketikGalon = Integer.parseInt(txtGalon.getText());
         jumlah = ketikGalon * hargaGalon;
         txtJumlah.setText(Integer.toString(jumlah));
@@ -795,7 +788,6 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnUbah;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
@@ -870,8 +862,38 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     
 private Connection con;
 
-//class ambil database
- 
+//class manipulasi database
+    
+    private Integer ambilHargaGalon(){
+        
+        this.con=con;
+        String selectUntung = "SELECT harga FROM harga_galon WHERE id_harga=1" ;
+        Statement statement = null;
+        Integer hargaInt;
+        String ambilKolomHarga;
+        try {
+            
+            statement = getConnection().createStatement();
+
+            ResultSet result = statement.executeQuery(selectUntung);
+            result.next();
+            ambilKolomHarga = result.getString("harga");
+            hargaInt = Integer.parseInt(ambilKolomHarga);
+            
+            
+            
+            return hargaInt;
+            
+            
+        } 
+        
+        
+        catch (SQLException exception) {
+            showMessageDialog(null, exception);
+            return hargaInt = 0;
+        }
+    }
+
     private String tampilUntung() {
         
         this.con=con;

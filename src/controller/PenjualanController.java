@@ -32,7 +32,7 @@ public class PenjualanController {
         Integer jumlah = Integer.parseInt(view.getTxtJumlah().getText());
 
         if (galon_terjual.equals(0)) {
-            JOptionPane.showMessageDialog(view, "Masih Nol!");
+            JOptionPane.showMessageDialog(view, "Tolong Isi Field Galon");
         }else if (tgl.trim().equals("")) {
             JOptionPane.showMessageDialog(view, "Tanggal masih kosong");
         }else {

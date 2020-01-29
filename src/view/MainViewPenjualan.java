@@ -23,7 +23,7 @@ public class MainViewPenjualan extends javax.swing.JFrame {
     }
 
     public void loadDatabase() throws SQLException, PenjualanException {
-        PenjualanView1.loadDatabase();
+        penjualanVIew1.loadDatabase();
     }
 
     /**
@@ -35,7 +35,7 @@ public class MainViewPenjualan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PenjualanView1 = new view.PenjualanVIew();
+        penjualanVIew1 = new view.PenjualanVIew();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi Pembukuan Isi Ulang RizkyBaru");
@@ -44,11 +44,11 @@ public class MainViewPenjualan extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PenjualanView1, javax.swing.GroupLayout.DEFAULT_SIZE, 1041, Short.MAX_VALUE)
+            .addComponent(penjualanVIew1, javax.swing.GroupLayout.DEFAULT_SIZE, 1041, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PenjualanView1, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
+            .addComponent(penjualanVIew1, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
         );
 
         pack();
@@ -57,6 +57,6 @@ public class MainViewPenjualan extends javax.swing.JFrame {
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.PenjualanVIew PenjualanView1;
+    private view.PenjualanVIew penjualanVIew1;
     // End of variables declaration//GEN-END:variables
 }
