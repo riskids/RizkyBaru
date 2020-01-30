@@ -118,6 +118,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         lblTampilUntung = new javax.swing.JLabel();
         Label_nama_keuntungan5 = new javax.swing.JLabel();
         Label_tampiUntung5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         PanelInput = new javax.swing.JPanel();
         btnUbah = new javax.swing.JButton();
         btnTambah = new javax.swing.JButton();
@@ -143,14 +144,17 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         lblTampilTanki = new javax.swing.JLabel();
         Label_nama_keuntungan10 = new javax.swing.JLabel();
         Label_tampiUntung6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         PanelUntungBulan4 = new javax.swing.JPanel();
         Label_tampiUntung3 = new javax.swing.JLabel();
         lblTampilTankiSatuan = new javax.swing.JLabel();
         Label_nama_keuntungan = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         PanelUntungBulan1 = new javax.swing.JPanel();
         lblTampilGalon = new javax.swing.JLabel();
         Label_tampiUntung2 = new javax.swing.JLabel();
         Label_nama_keuntungan8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         PanelMenu = new javax.swing.JPanel();
         Label_nama_keuntungan4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -208,6 +212,9 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
             }
         });
         PanelUntungBulan.add(Label_tampiUntung5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 40, 27));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\MSI GF63\\Downloads\\1a857d341d8b6dd31426d6a62a8d9054-dollar-coin-currency-icon-by-vexels.png")); // NOI18N
+        PanelUntungBulan.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 90, 90));
 
         PanelInput.setBackground(new java.awt.Color(255, 255, 255));
         PanelInput.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -416,6 +423,9 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         });
         PanelUntungBulan3.add(Label_tampiUntung6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 40, 27));
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/701248_arrow_512x512.png"))); // NOI18N
+        PanelUntungBulan3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
         PanelUntungBulan4.setBackground(new java.awt.Color(255, 255, 255));
         PanelUntungBulan4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -454,6 +464,9 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         Label_nama_keuntungan.setForeground(new java.awt.Color(44, 148, 230));
         Label_nama_keuntungan.setText("Jumlah Tanki Bulan Ini");
         PanelUntungBulan4.add(Label_nama_keuntungan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/62789.png"))); // NOI18N
+        PanelUntungBulan4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         PanelUntungBulan1.setBackground(new java.awt.Color(255, 255, 255));
         PanelUntungBulan1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -494,6 +507,9 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         Label_nama_keuntungan8.setForeground(new java.awt.Color(44, 148, 230));
         Label_nama_keuntungan8.setText("Galon Terjual Bulan Ini");
         PanelUntungBulan1.add(Label_nama_keuntungan8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/90-512.png"))); // NOI18N
+        PanelUntungBulan1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
 
         javax.swing.GroupLayout PanelUtamaLayout = new javax.swing.GroupLayout(PanelUtama);
         PanelUtama.setLayout(PanelUtamaLayout);
@@ -606,12 +622,12 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 271, Short.MAX_VALUE)
+                .addGap(0, 209, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 823, Short.MAX_VALUE)))
+                    .addGap(0, 761, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -851,7 +867,11 @@ catch(Exception ex)
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
