@@ -1114,9 +1114,8 @@ private Connection con;
             result.next();
             tanki = result.getString("SUM(harga_tanki)");
             
-            if (tanki == "") {
-                JOptionPane.showMessageDialog(this , "Data Tanki Masih Kosong!");
-                return tanki = "";
+            if (tanki == null) {
+                return tanki = "0";
             } else { 
                 lblTampilTanki.setText(tanki);
                 return tanki;
