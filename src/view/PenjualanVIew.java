@@ -5,7 +5,7 @@
  */
 package view;
 
-import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import controller.PenjualanController;
 import database.KoneksiJasper;
 import database.RizkyBaruDatabase;
@@ -622,12 +622,12 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 209, Short.MAX_VALUE)
+                .addGap(0, 109, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 761, Short.MAX_VALUE)))
+                    .addGap(0, 661, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -983,22 +983,26 @@ private Connection con;
         String selectUntung = "SELECT SUM(Jumlah) FROM `Penjualan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
         Statement statement = null;
         Integer untung,total,tanki;
-        String tampil_total,tankicek,untungKosong;
+        String tampil_total,tankicek,untungString;
         try {
             
             statement = getConnection().createStatement();
 
             ResultSet result = statement.executeQuery(selectUntung);
             result.next();
-            untung = Integer.parseInt(result.getString("SUM(Jumlah)"));
+            untungString = result.getString("SUM(Jumlah)");
             
-            untungKosong = Integer.toString(untung);
+            if (untungString == null) {
+                untung = 0;
+            }else{
+                untung = Integer.parseInt(untungString);
+            }
             tankicek = tampilTanki();
             
-            if (tankicek == null) {
+            if (tankicek == null ) {
                 
-                lblTampilUntung.setText(untungKosong);
-                return tampil_total = untungKosong;
+                lblTampilUntung.setText("0");
+                return tampil_total = "0";
                 
             } else {
                 tanki = Integer.parseInt(tankicek);
@@ -1074,7 +1078,7 @@ private Connection con;
             result.next();
             ambilGalon = result.getString("SUM(galon_terjual)");
             
-            if (ambilGalon == "") {
+            if (ambilGalon == null) {
                 
                 lblTampilGalon.setText("0");
                 return "0";

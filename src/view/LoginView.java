@@ -211,12 +211,13 @@ public class LoginView extends javax.swing.JFrame {
                 
                 try {
                     MainViewPenjualan Penjualan = new MainViewPenjualan();
-                    this.setVisible(false);
-                    Penjualan.loadDatabase();
+//                    this.setVisible(false);
+//                    Penjualan.loadDatabase();
                     Penjualan.setVisible(true);
-                    JOptionPane.showMessageDialog(this, "Login Berhasil!");
+//                    JOptionPane.showMessageDialog(this, "Login Berhasil!");
                     
                 } catch (Exception e) {
+                    System.out.println(e);
                 }
                 
             }else{

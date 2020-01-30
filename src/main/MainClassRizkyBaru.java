@@ -32,8 +32,10 @@ public class MainClassRizkyBaru {
             @Override
             public void run() {
                 
-                LoginView login = new LoginView();
-                login.setVisible(true);
+               MainViewPenjualan Penjualan = new MainViewPenjualan();
+//                    this.setVisible(false);
+//                    Penjualan.loadDatabase();
+                    Penjualan.setVisible(true);
                 
                 
 
