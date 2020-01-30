@@ -121,6 +121,13 @@ public class updateHarga extends javax.swing.JFrame {
         PenjualanVIew penjualan = new PenjualanVIew();
         penjualan.updateHarga(getHargaField().getText());
         this.setVisible(false);
+        
+         //ambil value dari tabel
+        PenjualanVIew view = new PenjualanVIew();
+        view.tampilUntung();
+        view.tampilGalon();
+        view.tampilTankiSatuan();
+        view.tampilTanki();
     }//GEN-LAST:event_btn_update_hargaActionPerformed
     
     

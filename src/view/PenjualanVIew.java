@@ -162,6 +162,11 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         setPreferredSize(new java.awt.Dimension(542, 448));
 
         PanelUtama.setBackground(new java.awt.Color(219, 236, 248));
+        PanelUtama.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                PanelUtamaMouseMoved(evt);
+            }
+        });
 
         PanelUntungBulan.setBackground(new java.awt.Color(255, 255, 255));
         PanelUntungBulan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -800,7 +805,22 @@ catch(Exception ex)
 
     private void btnBeliTanki1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBeliTanki1ActionPerformed
         // TODO add your handling code here:
+        
+        isiTanki isi = new isiTanki();
+        isi.setVisible(true);
+        
+        
     }//GEN-LAST:event_btnBeliTanki1ActionPerformed
+
+    private void PanelUtamaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelUtamaMouseMoved
+        // TODO add your handling code here:
+        
+         //ambil value dari tabel
+        tampilUntung();
+        tampilGalon();
+        tampilTankiSatuan();
+        tampilTanki();
+    }//GEN-LAST:event_PanelUtamaMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -939,7 +959,7 @@ private Connection con;
         }
     }
 
-    private String tampilUntung() {
+    public String tampilUntung() {
         
         this.con=con;
         String selectUntung = "SELECT SUM(Jumlah) FROM `Penjualan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
@@ -984,7 +1004,7 @@ private Connection con;
     }
 
     
-    private String tampilTankiSatuan() {
+    public String tampilTankiSatuan() {
         
         this.con=con;
         String selectUntung = "SELECT COUNT(*) FROM `beli_tanki`" ;
@@ -1021,7 +1041,7 @@ private Connection con;
 
     }
     
-    private String tampilGalon() {
+    public String tampilGalon() {
         
         this.con=con;
         String selectUntung = "SELECT SUM(galon_terjual) FROM `Penjualan` WHERE Tgl LIKE '"+ hariIni()+"%' " ;
@@ -1058,7 +1078,7 @@ private Connection con;
 
     }
     
-    private String tampilTanki() {
+    public String tampilTanki() {
         
         this.con=con;
         String selectUntung = "SELECT SUM(harga_tanki) FROM `beli_tanki` WHERE tanggal LIKE '"+ hariIni()+"%' " ;

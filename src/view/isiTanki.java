@@ -128,7 +128,12 @@ public class isiTanki extends javax.swing.JFrame {
         penjualan.isiTanki(getTankiField().getText());
         this.setVisible(false);
         
-        
+        //ambil value dari tabel
+        PenjualanVIew view = new PenjualanVIew();
+        view.tampilUntung();
+        view.tampilGalon();
+        view.tampilTankiSatuan();
+        view.tampilTanki();
     }//GEN-LAST:event_btn_simpan_TankiActionPerformed
 
     private void txtInputTankiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInputTankiKeyTyped

@@ -56,6 +56,9 @@
               <Color blue="f8" green="ec" red="db" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="PanelUtamaMouseMoved"/>
+          </Events>
 
           <Layout>
             <DimensionLayout dim="0">
