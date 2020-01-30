@@ -99,6 +99,8 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
     public JTextField getTxtJumlah() {
         return txtJumlah;
     }
+    
+   
    
     
     /**
@@ -691,11 +693,7 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         // TODO add your handling code here:
         controller.updatePenjualan(this);
         
-        //ambil value dari tabel
-        tampilUntung();
-        tampilGalon();
-        tampilTankiSatuan();
-        tampilTanki();
+
     }//GEN-LAST:event_btnUbahActionPerformed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed

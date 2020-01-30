@@ -60,7 +60,7 @@ public class PenjualanController {
         }
 
         Integer id = Integer.parseInt(view.getTxtId().getText());
-
+        
         String tgl = view.getTxtTgl().getText();
         Integer galon_terjual = Integer.parseInt(view.getTxtGalon().getText());
         Integer jumlah = Integer.parseInt(view.getTxtJumlah().getText());
@@ -68,6 +68,7 @@ public class PenjualanController {
         if (galon_terjual.equals(0)) {
             JOptionPane.showMessageDialog(view, "Tgl Masih Kosong");
         }else {
+            model.setId(id);
             model.setTgl(tgl);
             model.setGalon(galon_terjual);
             model.setJumlah(jumlah);

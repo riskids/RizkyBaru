@@ -29,7 +29,7 @@ public class PenjualanDaoImpl implements PenjualanDao {
             + "(Tgl, Galon_Terjual, Jumlah) VALUES"
             + "(?,?,?)";
 
-    private final String updatePenjualan = "UPDATE Penjualan SET Tgl=?,Galon_Terjual=?,Jumlah=?,WHERE ID=?";
+    private final String updatePenjualan = "UPDATE Penjualan SET Tgl=?,Galon_Terjual=?,Jumlah=? WHERE ID=?";
 
     private final String deletePenjualan = "DELETE FROM Penjualan WHERE ID=?";
 
@@ -88,7 +88,7 @@ public class PenjualanDaoImpl implements PenjualanDao {
             statement.setString(1, Penjualan.getTgl());
             statement.setInt(2, Penjualan.getGalon());
             statement.setInt(3, Penjualan.getJumlah());
-            statement.setInt(5, Penjualan.getId());
+            statement.setInt(4, Penjualan.getId());
             statement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
