@@ -622,12 +622,12 @@ public class PenjualanVIew extends javax.swing.JPanel implements PenjualanListen
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 109, Short.MAX_VALUE)
+                .addGap(0, 275, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(PanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 661, Short.MAX_VALUE)))
+                    .addGap(0, 827, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -813,8 +813,9 @@ catch(Exception ex)
         // TODO add your handling code here:
         
         LoginView login = new LoginView();
-        login.setVisible(true);
         this.setVisible(false);
+        login.setVisible(true);
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnBeliTanki1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBeliTanki1ActionPerformed

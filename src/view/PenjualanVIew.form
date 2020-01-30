@@ -25,13 +25,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="109" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="275" max="32767" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="795" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="PanelMenu" min="-2" pref="243" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="661" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="827" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
