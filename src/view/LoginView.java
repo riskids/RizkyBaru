@@ -60,6 +60,7 @@ public class LoginView extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         labelusername1 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login Ke Dashboard Rizky Baru");
@@ -74,12 +75,12 @@ public class LoginView extends javax.swing.JFrame {
         Label_nama_keuntungan6.setFont(new java.awt.Font("SansSerif", 0, 36)); // NOI18N
         Label_nama_keuntungan6.setForeground(new java.awt.Color(44, 148, 230));
         Label_nama_keuntungan6.setText("Baru");
-        LayerUtama.add(Label_nama_keuntungan6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 90, -1));
+        LayerUtama.add(Label_nama_keuntungan6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 90, -1));
 
         Label_nama_keuntungan5.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Label_nama_keuntungan5.setForeground(new java.awt.Color(44, 148, 230));
         Label_nama_keuntungan5.setText("Rizky");
-        LayerUtama.add(Label_nama_keuntungan5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
+        LayerUtama.add(Label_nama_keuntungan5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
 
         PanelForm.setBackground(new java.awt.Color(44, 148, 230));
         PanelForm.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,6 +171,9 @@ public class LoginView extends javax.swing.JFrame {
 
         LayerUtama.add(PanelForm, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 420, 430));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/asset/190545.png"))); // NOI18N
+        LayerUtama.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, 130));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -208,6 +212,7 @@ public class LoginView extends javax.swing.JFrame {
                 try {
                     MainViewPenjualan Penjualan = new MainViewPenjualan();
                     this.setVisible(false);
+                    Penjualan.loadDatabase();
                     Penjualan.setVisible(true);
                     JOptionPane.showMessageDialog(this, "Login Berhasil!");
                     
@@ -279,6 +284,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JPanel LayerUtama;
     private javax.swing.JPanel PanelForm;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel labelusername;

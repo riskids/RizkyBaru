@@ -35,15 +35,7 @@ public class MainClassRizkyBaru {
                 LoginView login = new LoginView();
                 login.setVisible(true);
                 
-                try {
-                    MainViewPenjualan Penjualan = new MainViewPenjualan();
-                    Penjualan.loadDatabase();
-                    Penjualan.setVisible(false);
-                    
-                    
-                } catch (SQLException ex) {
-                } catch (PenjualanException ex) {
-                }
+                
 
             }
         });

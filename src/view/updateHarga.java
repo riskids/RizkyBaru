@@ -36,16 +36,19 @@ public class updateHarga extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Label_nama_keuntungan4 = new javax.swing.JLabel();
         txtInputHarga = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        Label_nama_keuntungan6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         btn_update_harga = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(44, 148, 230));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Label_nama_keuntungan4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        Label_nama_keuntungan4.setForeground(new java.awt.Color(255, 255, 255));
-        Label_nama_keuntungan4.setText("Ubah Harga Per Galon");
-
+        txtInputHarga.setBackground(new java.awt.Color(44, 148, 230));
+        txtInputHarga.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        txtInputHarga.setForeground(new java.awt.Color(255, 255, 255));
+        txtInputHarga.setBorder(null);
         txtInputHarga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtInputHargaActionPerformed(evt);
@@ -56,41 +59,33 @@ public class updateHarga extends javax.swing.JFrame {
                 txtInputHargaKeyTyped(evt);
             }
         });
+        jPanel1.add(txtInputHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 225, 40));
 
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 230, 20));
+
+        Label_nama_keuntungan6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Label_nama_keuntungan6.setForeground(new java.awt.Color(255, 255, 255));
+        Label_nama_keuntungan6.setText("Masukan Harga Per Galon");
+        jPanel1.add(Label_nama_keuntungan6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, 29));
+
+        jPanel2.setBackground(new java.awt.Color(219, 236, 248));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_update_harga.setBackground(new java.awt.Color(44, 148, 230));
+        btn_update_harga.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btn_update_harga.setForeground(new java.awt.Color(255, 255, 255));
         btn_update_harga.setText("Ubah");
+        btn_update_harga.setBorder(null);
         btn_update_harga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_update_hargaActionPerformed(evt);
             }
         });
+        jPanel2.add(btn_update_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 230, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_update_harga)
-                            .addComponent(txtInputHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(Label_nama_keuntungan4)))
-                .addContainerGap(107, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(Label_nama_keuntungan4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtInputHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_update_harga)
-                .addContainerGap(97, Short.MAX_VALUE))
-        );
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 400, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,29 +106,31 @@ public class updateHarga extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtInputHargaActionPerformed
 
+    private void txtInputHargaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInputHargaKeyTyped
+        // TODO add your handling code here:
+        char ketikan = evt.getKeyChar();
+        if (!(Character.isDigit(ketikan))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtInputHargaKeyTyped
+
     private void btn_update_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_update_hargaActionPerformed
-            // TODO add your handling code here:
-        
+        // TODO add your handling code here:
+
         getHargaField();
         PenjualanVIew penjualan = new PenjualanVIew();
         penjualan.updateHarga(getHargaField().getText());
         this.setVisible(false);
     }//GEN-LAST:event_btn_update_hargaActionPerformed
-
-    private void txtInputHargaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInputHargaKeyTyped
-        // TODO add your handling code here:
-         char ketikan = evt.getKeyChar();
-        if (!(Character.isDigit(ketikan))) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtInputHargaKeyTyped
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Label_nama_keuntungan4;
+    private javax.swing.JLabel Label_nama_keuntungan6;
     private javax.swing.JButton btn_update_harga;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField txtInputHarga;
     // End of variables declaration//GEN-END:variables
 }
